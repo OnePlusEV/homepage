@@ -14,6 +14,8 @@ import { CardComponent } from './components/core/card/card.component';
 import { ClockComponent } from './components/blocks/clock/clock.component';
 import { WeatherComponent } from './components/blocks/weather/weather.component';
 import { BookmarksComponent } from './components/blocks/bookmarks/bookmarks.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { BookmarksComponent } from './components/blocks/bookmarks/bookmarks.comp
     CardComponent,
     ClockComponent,
     WeatherComponent,
-    BookmarksComponent
+    BookmarksComponent,
+    HomeComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

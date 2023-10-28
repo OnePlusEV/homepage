@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { WeatherParams} from "../interfaces/IWeatherParams";
-import {BehaviorSubject, Observable} from "rxjs";
+import { WeatherParams} from "../interfaces/Wetaher/IWeatherParams";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,6 @@ export class WeatherService {
   }
 
   setParams(value: WeatherParams) {
-    debugger
     this.weatherParams.next(value);
   }
 

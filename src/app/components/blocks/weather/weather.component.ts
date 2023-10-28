@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { WeatherParams } from "../../../interfaces/IWeatherParams";
-import { WeatherResponse } from "../../../interfaces/IWeatherResponse";
-import {Observable} from "rxjs";
+import { WeatherParams } from "../../../interfaces/Wetaher/IWeatherParams";
+import { WeatherResponse } from "../../../interfaces/Wetaher/IWeatherResponse";
 import {WeatherService} from "../../../services/weather.service";
 
 @Component({

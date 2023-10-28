@@ -10,3 +10,15 @@
 router-outlet {
   display: none
 }
+
+mat-drawer {
+  width: 600px;
+  background: #1d1d1d;
+  border: none;
+}
+
+.nav-element {
+  text-decoration: none;
+  color: white;
+  font-size: 36px;
+}

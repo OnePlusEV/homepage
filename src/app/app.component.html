@@ -1,11 +1,29 @@
-<div class="page">
-  <div class="header">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
+<mat-drawer-container class="example-container" autosize>
+
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div class="d-flex flex-column mt-4">
+      <a *ngFor="let link of links"
+         class="nav-element"
+         [routerLink]="link.path">
+        {{link.title}}
+      </a>
+    </div>
+  </mat-drawer>
+
+
+
+
+  <div class="page">
+    <div class="header">
+      <button mat-icon-button
+              class="example-icon"
+              (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <router-outlet></router-outlet>
+
+    <div class="footer"> Footer</div>
   </div>
-
-  <router-outlet></router-outlet>
-
-  <div class="footer"> Footer </div>
-</div>
+</mat-drawer-container>

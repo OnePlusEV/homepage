@@ -16,6 +16,7 @@ import { WeatherComponent } from './components/blocks/weather/weather.component'
 import { BookmarksComponent } from './components/blocks/bookmarks/bookmarks.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SettingsComponent } from './pages/settings/settings.component';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CacheService} from "./services/cache.service";
+import { routes } from "./app-routing.module";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ export class AppComponent implements OnInit {
 
   constructor(private cache: CacheService) {
   }
+
+  public links = routes;
 
   ngOnInit() {
     this.cache.loadSettings();

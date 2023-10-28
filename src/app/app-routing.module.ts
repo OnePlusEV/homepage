@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./pages/home/home.component";
 import {SettingsComponent} from "./pages/settings/settings.component";
 
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'settings', component: SettingsComponent },
+export const routes: Routes = [
+  {title: 'Home', path: '', component: HomeComponent },
+  { title: 'Settings', path: 'settings', component: SettingsComponent },
 ];
 
 @NgModule({

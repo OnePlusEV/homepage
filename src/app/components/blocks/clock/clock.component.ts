@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {CacheService} from "../../../services/cache.service";
 
 @Component({
   selector: 'app-clock',
@@ -6,11 +7,21 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./clock.component.scss']
 })
 export class ClockComponent implements OnInit {
+
+  constructor(private cache: CacheService) {
+  }
   public timeSeparator: string = ':'
+  public stylesFromCache: any;
   ngOnInit() {
     setInterval(() => {
       this.getTime();
     }, 1000)
+
+    this.stylesFromCache = this.cache.getStylesFromCache('clock');
+
+    this.cache.settingsChanged$.subscribe(res => {
+      this.stylesFromCache = this.cache.getStylesFromCache('clock');
+    })
   }
 
   getTime(): string {

@@ -17,5 +17,14 @@ export class SettingsComponent implements OnInit {
   ngOnInit() {
   }
 
+  public card = {
+    title: "Work",
+    links: [
+      {name: "Mail", url: "https://mail.bivgroup.ru/"},
+      {name: "GitLab Soglasie", url: "https://sglgitlab.soglasie.ru/"},
+      {name: "Jira", url: "https://rybinsk.bivgroup.com/jira/junta/secure/Dashboard.jspa"},
+    ],
+  };
+
 
 }

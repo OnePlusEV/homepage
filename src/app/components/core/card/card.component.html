@@ -1,11 +1,11 @@
-<mat-card class="card">
+<mat-card class="card" [ngStyle]="stylesFromCache">
   <mat-card-header>
     <mat-card-subtitle class="card__header"> {{ card.title }} </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <mat-list role="list" class="card__list">
       <mat-list-item *ngFor="let link of card.links" role="listitem">
-        <a class="text-color" [href]="link.url"> {{ link.name }} </a>
+        <a [style.color]="stylesFromCache.color" class="text-color" [href]="link.url"> {{ link.name }} </a>
       </mat-list-item>
     </mat-list>
   </mat-card-content>

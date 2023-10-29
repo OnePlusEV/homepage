@@ -1,0 +1,47 @@
+<mat-card class="card">
+  <mat-card-header class="card__header">
+    {{ header }}
+  </mat-card-header>
+  <mat-card-content class="d-flex flex-row">
+
+    <section class="d-flex flex-column flex-grow-1" [formGroup]="form">
+
+      <div class="d-flex flex-row">
+        <div class="d-flex align-items-end label"> Enable </div>
+        <mat-checkbox class="mt-4" formControlName="enable"></mat-checkbox>
+      </div>
+
+      <app-color-picker [value]="form.get('color')?.value"
+                        (onChangeValue)="changeColor($event)"
+                        class="mt-2"
+                        label="Color">
+      </app-color-picker>
+
+      <app-color-picker [value]="form.get('background')?.value"
+                        (onChangeValue)="changeBackground($event)"
+                        class="mt-2"
+                        label="Background">
+      </app-color-picker>
+
+      <div class="d-flex align-items-center">
+        <div class="label"> Width </div>
+        <mat-slider
+          class="slider"
+          [max]="1920"
+          [min]="0"
+          [step]="10"
+          [discrete]="true">
+          <input (valueChange)="changeWidth($event)"
+                 matSliderThumb
+                 [value]="form.get('width')?.value" #slider>
+        </mat-slider>
+      </div>
+
+    </section>
+
+    <div class="flex-grow-1">
+      <ng-content> </ng-content>
+    </div>
+
+  </mat-card-content>
+</mat-card>

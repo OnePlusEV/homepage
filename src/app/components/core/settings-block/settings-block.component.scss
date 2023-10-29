@@ -1,0 +1,32 @@
+.card {
+  margin: 10px;
+  background: rgba(29, 29, 29, 0.32);
+  color: white;
+  min-width: 400px;
+  min-height: 250px;
+
+  &__header {
+    color: white;
+    font-size: 30px;
+  }
+
+  &__list {
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.text-color {
+  text-decoration: none;
+  color: white;
+}
+
+.label {
+  width: 120px;
+}
+
+.slider {
+  width: 100%;
+  margin-left: 50px;
+}
+

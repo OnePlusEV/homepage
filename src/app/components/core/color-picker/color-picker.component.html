@@ -1,4 +1,7 @@
-{{ label }}: <input [value]="value"
-              [style.background]="value"
-              (colorPickerChange)="changeValue($event)"
-              [(colorPicker)]="value"/>
+<div class="d-flex">
+  <div class="label">{{ label }} </div>
+  <input [value]="value"
+         [style.background]="value"
+         (colorPickerChange)="changeValue($event)"
+         [(colorPicker)]="value"/>
+</div>

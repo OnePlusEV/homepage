@@ -19,6 +19,9 @@ export class SettingsBlockComponent implements OnInit {
   public form: FormGroup = this.styleForm.createStylesForm();
 
   ngOnInit() {
+    const stylesFromCache = this.cache.getStylesFromCache(this.section, true);
+    this.form.setValue(stylesFromCache);
+
     this.form.valueChanges.subscribe(() => {
       const form: Object = this.form.getRawValue();
       this.cache.saveStylesToCache(this.section, form);

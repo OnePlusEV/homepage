@@ -14,7 +14,6 @@ export class SettingsStylesFormService {
       background: new FormControl(''),
       color: new FormControl(''),
       width: new FormControl(0),
-      height: new FormControl(0),
     })
   }
 }

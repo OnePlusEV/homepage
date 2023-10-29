@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { WeatherParams } from "../../../interfaces/Wetaher/IWeatherParams";
 import { WeatherResponse } from "../../../interfaces/Wetaher/IWeatherResponse";
 import {WeatherService} from "../../../services/weather.service";
+import {CacheService} from "../../../services/cache.service";
 
 @Component({
   selector: 'app-weather',
@@ -11,8 +12,11 @@ import {WeatherService} from "../../../services/weather.service";
 })
 export class WeatherComponent implements OnInit {
 
-  constructor(private http: HttpClient, private weatherService: WeatherService) {}
+  constructor(private http: HttpClient,
+              private weatherService: WeatherService,
+              private cache: CacheService) {}
   public weather = '';
+  public stylesFromCache = {};
 
 //   public params: WeatherParams = {
 //     apiVer: 2.5,
@@ -22,7 +26,12 @@ export class WeatherComponent implements OnInit {
 // }
 
   ngOnInit() {
+    this.stylesFromCache = this.cache.getStylesFromCache('weather');
     this.getAsyncWeather(this.weatherService.getParams())
+
+    this.cache.settingsChanged$.subscribe(res => {
+      this.stylesFromCache = this.cache.getStylesFromCache('weather');
+    })
   }
 
   public getAsyncWeather(params: WeatherParams) {

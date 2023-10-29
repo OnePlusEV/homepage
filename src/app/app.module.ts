@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule }   from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -19,6 +20,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import { ColorPickerComponent } from './components/core/color-picker/color-picker.component';
+import {MatSliderModule} from "@angular/material/slider";
+import { SettingsBlockComponent } from './components/core/settings-block/settings-block.component';
 
 
 @NgModule({
@@ -29,7 +33,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     WeatherComponent,
     BookmarksComponent,
     HomeComponent,
-    SettingsComponent
+    SettingsComponent,
+    ColorPickerComponent,
+    SettingsBlockComponent
   ],
   imports: [
     BrowserModule,
@@ -38,13 +44,15 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ColorPickerModule,
 
     MatIconModule,
     MatButtonModule,
     MatCardModule,
     MatListModule,
     MatSidenavModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

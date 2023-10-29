@@ -16,6 +16,19 @@ export class SettingsComponent implements OnInit {
 
   public weatherForm: FormGroup = new FormGroup<any>({});
 
+  changeColor(value: any) {
+    this.weatherForm.get('color')?.setValue(value);
+  }
+
+  changeBackground(value: any) {
+    this.weatherForm.get('background')?.setValue(value);
+  }
+
+  changeWidth(value: any) {
+    this.weatherForm.get('width')?.setValue(value);
+  }
+
+
   ngOnInit() {
     this.weatherForm = this.styleForm.createStylesForm();
 
